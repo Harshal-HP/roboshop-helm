@@ -1,2 +1,2 @@
 install:
-	helm install $(appName) . -f env-dev/$(appName).yml
+	helm install $(appName) . -f env-dev/$(appName).yaml

@@ -3,7 +3,7 @@ kind: configMap
 metadata:
   name: {{ .Values.appName }}
   labels:
-    app: { { .Values.appName } }
+    app: {{ .Values.appName }}
 data:
   {{- range $key, $val := .Values.configMap_data }}
   {{ $key }}: {{ $val | quote }}

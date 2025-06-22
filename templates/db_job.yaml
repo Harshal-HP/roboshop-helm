@@ -1,7 +1,10 @@
+{{ if .Values.db_job.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: db-job
+  name: { { .Values.appName } }-db-job
+  labels:
+    app: { { .Values.appName } }
 spec:
   template:
     spec:
@@ -13,3 +16,4 @@ spec:
                 name: { { .Values.appName } }
       restartPolicy: Never
   backoffLimit: 2
+{{ end }}

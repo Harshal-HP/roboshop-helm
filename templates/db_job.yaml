@@ -18,7 +18,7 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ $.Values.appName }}
-         {{- end }} 
+        {{- end }} 
       containers:
         {{- range .Values.db_job.jobs }}
         - name: {{ . }}

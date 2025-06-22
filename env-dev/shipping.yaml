@@ -1,5 +1,5 @@
 appName: shipping
-containerPort: 8080
+containerPort: "8080"
 serviceType: ClusterIP
 configMap_data:
   CART_ENDPOINT: "cart:8080"

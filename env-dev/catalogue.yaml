@@ -1,5 +1,5 @@
 appName: catalogue
-containerPort: 8080
+containerPort: "8080"
 serviceType: ClusterIP
 configMap_data:
   MONGO: "true"

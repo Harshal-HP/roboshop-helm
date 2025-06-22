@@ -30,6 +30,6 @@ spec:
             - configMapRef:
                 name: {{ $.Values.appName }}
          {{- end }} 
-        restartPolicy: Never
+      restartPolicy: Never
   backoffLimit: 0
 {{ end }}

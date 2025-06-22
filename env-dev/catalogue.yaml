@@ -9,4 +9,4 @@ configMap_data:
   DB_HOST: "mongodb-dev.harshaldevops.online"
   SCHEMA_FILE: "db/master-data.js"
 db_job:
-  enabled: "true"
+  enabled: true

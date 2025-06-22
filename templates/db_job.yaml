@@ -2,9 +2,9 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: { { .Values.appName } }-db-job
+  name: {{ .Values.appName }}-db-job
   labels:
-    app: { { .Values.appName } }
+    app: {{ .Values.appName }}
 spec:
   template:
     spec:
@@ -13,7 +13,7 @@ spec:
           image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
           envFrom:
             - configMapRef:
-                name: { { .Values.appName } }
+                name: {{ .Values.appName }}
       restartPolicy: Never
   backoffLimit: 0
 {{ end }}

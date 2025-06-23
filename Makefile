@@ -1,6 +1,6 @@
 install:
 	git pull
-	helm upgrade -i $(appName) . -f env-dev/$(appName).yaml
+	helm upgrade -i $(appName) . -f env-dev/$(appName).yaml -n app --create-namespace
 
 all:
 	git pull

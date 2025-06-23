@@ -3,3 +3,4 @@ db_job:
 
 containerPort: "8080"
 serviceType: ClusterIP
+env: dev

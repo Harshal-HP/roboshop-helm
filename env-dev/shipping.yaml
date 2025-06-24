@@ -15,3 +15,11 @@ db_job:
     - schema
   jobs:
     - master-data
+
+resources:
+      requests:
+        memory: "2048Mi"
+        cpu: "800m"
+      limits:
+        memory: "3000Mi"
+        cpu: "1000m"

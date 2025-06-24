@@ -5,9 +5,15 @@ configMap_data:
   DB_TYPE: "mongo"
   APP_GIT_URL: https://github.com/roboshop-devops-project-v3/catalogue
   DB_HOST: "mongodb-dev.harshaldevops.online"
-
 db_job:
   enabled: true
   ext: js
   jobs:
     - master-data
+resources:
+      requests:
+        memory: "64Mi"
+        cpu: "30m"
+      limits: 
+        memory: "128Mi"
+        cpu: "100m"

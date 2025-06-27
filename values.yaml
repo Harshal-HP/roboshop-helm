@@ -4,3 +4,6 @@ db_job:
 containerPort: "8080"
 serviceType: ClusterIP
 env: dev
+
+minReplicas: 1
+maxReplicas: 10

@@ -5,5 +5,5 @@ containerPort: "8080"
 serviceType: ClusterIP
 env: dev
 
-minReplicas: 1
+minReplicas: 2
 maxReplicas: 10

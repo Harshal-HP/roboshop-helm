@@ -21,15 +21,15 @@ spec:
           labelSelector:
             matchLabels:
               app: {{ .Values.appName }}
-      # affinity:
-      #   nodeAffinity:
-      #     requiredDuringSchedulingIgnoredDuringExecution:
-      #       nodeSelectorTerms:
-      #         - matchExpressions:
-      #             - key: project/name
-      #               operator: In
-      #               values:
-      #                 - roboshop
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: project/name
+                    operator: In
+                    values:
+                      - roboshop
       containers:
         - image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.appName }}
           name: {{ .Values.appName }}

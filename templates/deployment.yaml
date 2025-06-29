@@ -15,7 +15,7 @@ spec:
         app: {{ .Values.appName }}
     spec:
       topologySpreadConstraints:
-        - topologyKey: project/name
+        - topologyKey: kubernetes.io/hostname
           maxSkew: 1
           whenUnsatisfiable: DoNotSchedule
           labelSelector:

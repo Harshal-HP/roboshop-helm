@@ -25,7 +25,7 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-              - matchExpression:
+              - matchExpressions:
                   - key: project/name
                     operator: In
                     value:

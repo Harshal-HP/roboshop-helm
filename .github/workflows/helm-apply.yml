@@ -42,6 +42,6 @@ jobs:
       - name: helm Apply
         run: |
           az login --service-principal --username $ARM_CLIENT_ID --password $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
-          az aks get-credentials --name=main-${{ inputs.Env }} --resource-group=${{ inputs.resourceGroup }} --overwrite-existing
-          az aks update --name=main-${{ inputs.Env }} --resource-group=${{ inputs.resourceGroup }} --attach-acr harshalhp --overwrite-existing
+          # az aks get-credentials --name=main-${{ inputs.Env }} --resource-group=${{ inputs.resourceGroup }} --overwrite-existing
+          az aks update --name=main-${{ inputs.Env }} --resource-group=${{ inputs.resourceGroup }} --attach-acr harshalhp 
           helm upgrade -i ${{ inputs.appName }} . -f env-dev/${{ inputs.appName }}.yaml -n app --create-namespace --set appTag=${{ github.sha }}

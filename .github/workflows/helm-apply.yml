@@ -19,7 +19,12 @@ jobs:
     env: 
       vault_token: ${{ secrets.vault_token }}
     steps:
-      - uses: actions/checkout@v4
+    #   - uses: actions/checkout@v4
+      - name: Checkout Roboshop Helm repo
+        uses: actions/checkout@v4
+        with:
+          repository: Harshal-HP/roboshop-helm      # Format: org-or-user/repo
+          ref: main                        # Optional: branch, tag, or commit SHA
       - name: Import Secrets Azure 
         uses: hashicorp/vault-action@v2.4.0
         with:

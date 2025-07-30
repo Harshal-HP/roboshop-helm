@@ -2,7 +2,6 @@ name: helm Destroy
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_dispatch:
-  workflow_call:
     inputs:
       appType:
         required: true

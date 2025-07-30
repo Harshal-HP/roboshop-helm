@@ -1,6 +1,18 @@
 name: helm Apply
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      appType:
+        required: true
+        type: string
+      appName:
+        required: true
+        type: string
+    secrets:
+      vault_token:
+        required: false
 jobs:
   HelmApply:
     runs-on: self-hosted
@@ -22,4 +34,4 @@ jobs:
         run: |
           az login --service-principal --username $ARM_CLIENT_ID --password $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
           az aks get-credentials --name=main-dev --resource-group=roboshop-ukwest-dev --overwrite-existing
-          helm upgrade -i frontend . -f env-dev/frontend.yaml -n app --create-namespace
+          helm upgrade -i ${{ inputs.appName }} . -f env-dev/${{ inputs.appName }}.yaml -n app --create-namespace

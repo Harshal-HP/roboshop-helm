@@ -31,7 +31,8 @@ spec:
                     values:
                       - roboshop
       containers:
-        - image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.appName }}
+        # - image: public.ecr.aws/w8x4g9h7/roboshop-v3/{{ .Values.appName }}
+        - image: harshalhp.azurecr.io/{{ .Values.appName }}:{{ .Values.appTag }}
           name: {{ .Values.appName }}
           ports:
             - containerPort: {{ .Values.containerPort }}

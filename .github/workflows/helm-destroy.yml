@@ -3,16 +3,6 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_dispatch:
 #  workflow_call:
-    inputs:
-      appType:
-        required: true
-        type: string
-      appName:
-        required: true
-        type: string
-    secrets:
-      vault_token:
-        required: false
 jobs:
   HelmDestroy:
     runs-on: self-hosted

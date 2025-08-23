@@ -19,3 +19,9 @@ resources:
       limits: 
         memory: "1024Mi"
         cpu: "450m"
+
+probes:
+  liveness:
+    initialDelaySeconds: 30
+  readiness:
+    initialDelaySeconds: 30

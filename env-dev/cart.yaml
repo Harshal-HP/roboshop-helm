@@ -16,3 +16,5 @@ probes:
     initialDelaySeconds: 30
   readiness:
     initialDelaySeconds: 30
+
+log_type: json

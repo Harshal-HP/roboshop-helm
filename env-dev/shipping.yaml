@@ -29,3 +29,5 @@ probes:
     initialDelaySeconds: 60
   readiness:
     initialDelaySeconds: 60
+
+log_type: raw

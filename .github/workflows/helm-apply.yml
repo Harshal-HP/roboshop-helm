@@ -47,4 +47,5 @@ jobs:
           kubectl get ns app || kubectl create ns app
           argocd app create ${{ inputs.appName }} --repo https://github.com/Harshal-HP/roboshop-helm.git --path . --dest-namespace app --dest-server https://kubernetes.default.svc --values env-dev/${{ inputs.appName }}.yaml --helm-set appTag=${{ github.sha }} --upsert
           argocd app sync ${{ inputs.appName }}
-          # helm upgrade -i ${{ inputs.appName }} . -f env-dev/${{ inputs.appName }}.yaml -n app --create-namespace --set appTag=${{ github.sha }}
+
+# helm upgrade -i ${{ inputs.appName }} . -f env-dev/${{ inputs.appName }}.yaml -n app --create-namespace --set appTag=${{ github.sha }}
